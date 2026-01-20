@@ -1,0 +1,115 @@
+{
+	"[yaml]": {
+		"editor.formatOnSave": true
+	},
+	"[toml]": {
+		"editor.defaultFormatter": "tamasfe.even-better-toml",
+		"editor.formatOnSave": true
+	},
+	"[python]": {
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "always"
+		}
+	},
+	"[robotframework]": {
+		"editor.defaultFormatter": "d-biehl.robotcode",
+		"editor.wordBasedSuggestions": "allDocuments",
+		"editor.semanticHighlighting.enabled": true,
+		"editor.inlayHints.enabled": "offUnlessPressed",
+		"editor.quickSuggestions": {
+			"strings": "on"
+		},
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "always"
+	},
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+
+	"git.allowForcePush": true,
+	"git.autofetch": "all",
+	"git.autoStash": true,
+	"git.pruneOnFetch": true,
+	"git.rebaseWhenSync": true,
+	"git.suggestSmartCommit": false,
+	"git.supportCancellation": true,
+	"git.useEditorAsCommitInput": false,
+	"git.pullBeforeCheckout": true,
+	"git.blame.editorDecoration.enabled": true,
+	"git.blame.statusBarItem.enabled": true,
+	"git.useCommitInputAsStashMessage": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+
+	"terminal.integrated.persistentSessionReviveProcess": "never",
+	"files.autoSave": "onFocusChange",
+	"search.useIgnoreFiles": true,
+
+	"files.eol": "\n",
+	"python.testing.pytestEnabled": true,
+	"testing.automaticallyOpenPeekView": "never",
+	"pylint.importStrategy": "fromEnvironment",
+	"pylint.severity": {
+		"convention": "Warning",
+		"error": "Error",
+		"fatal": "Error",
+		"refactor": "Warning",
+		"warning": "Warning",
+		"info": "Warning"
+	},
+	"explorer.compactFolders": false,
+	"python.terminal.activateEnvInCurrentTerminal": true,
+	"editor.acceptSuggestionOnCommitCharacter": false,
+	"pylint.ignorePatterns": [
+		"**/pyright-internal/src/tests/samples/*",
+		"**/pyright-internal/typeshed-fallback/*",
+		"**/docstubs/*"
+	],
+	"terminal.integrated.env.windows": {
+		"PATH": "${workspaceFolder}/.venv/Scripts;${env:PATH}"
+	},
+
+	"task.problemMatchers.neverPrompt": true,
+	"editor.unicodeHighlight.nonBasicASCII": false,
+	"editor.unicodeHighlight.includeStrings": false,
+	"ruff.nativeServer": true,
+
+	"files.readonlyInclude": {
+		".pytest_cache/**/*": true,
+		".venv/**/*": true,
+		"**/dist/**/*": true,
+		"**/node_modules/**/*": true,
+		"**/out/**/*": true,
+		"basedpyright/index.js": true,
+		"basedpyright/langserver.index.js": true,
+		"docstubs/**/*": true,
+		"package-lock.json": true,
+		"uv.lock": true
+	},
+
+	"chat.commandCenter.enabled": false,
+	"telemetry.feedback.enabled": false,
+	"workbench.editor.revealIfOpen": true,
+	// https://github.com/microsoft/vscode-python/issues/25467
+	"python.terminal.shellIntegration.enabled": false,
+	"cSpell.import": ["@cspell/dict-fr-fr/cspell-ext.json"],
+	"cSpell.language": "fr, fr_FR, en, en-US",
+	"cSpell.dictionaries": [
+		"data-science",
+		"data-science-models",
+		"data-science-tools",
+		"powershell",
+		"python",
+		"python-common"
+	],
+	"editor.unicodeHighlight.ambiguousCharacters": false,
+	"robotcode.analysis.diagnosticMode": "workspace",
+	"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python",
+  	"python.terminal.activateEnvironment": true
+}

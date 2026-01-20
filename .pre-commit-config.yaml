@@ -1,0 +1,93 @@
+fail_fast: false
+repos:
+  - hooks:
+      - description: Robot Framework linter
+        id: robocop
+        name: robocop
+      - description: Robot Framework formatter
+        id: robocop-format
+        name: robocop-format
+    repo: https://github.com/MarketSquare/robotframework-robocop
+    rev: v7.2.0
+
+  - hooks:
+      - args:
+          - --fix
+          - --exit-non-zero-on-fix
+        id: ruff-check
+      - id: ruff-format
+    repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.11
+
+  - hooks:
+      - entry: uv run --isolated ty check
+        files: ^src/|^tests/
+        id: ty
+        language: system
+        name: ty check
+        pass_filenames: false
+        require_serial: true
+        types:
+          - python
+    repo: local
+
+  - hooks:
+      - args:
+          - --branch
+          - main
+        id: no-commit-to-branch
+        name: prevent commits to main
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-merge-conflict
+    repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+
+  - hooks:
+      - id: cspell
+      - always_run: true
+        args:
+          - --no-must-find-files
+          - --no-progress
+          - --no-summary
+          - --files
+          - .git/COMMIT_EDITMSG
+        id: cspell
+        name: check commit message spelling
+        stages:
+          - commit-msg
+    repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v9.4.0
+
+  - hooks:
+      - id: conventional-commits
+    repo: https://github.com/qoomon/git-conventional-commits
+    rev: v2.7.2
+
+  - hooks:
+      - id: commitizen
+      - id: commitizen-branch
+        stages:
+          - pre-push
+    repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.11.3
+
+  - repo: https://github.com/biomejs/pre-commit
+    rev: v2.3.11
+    hooks:
+      - id: biome-check
+        args: [--diagnostic-level, warn]
+        exclude: |
+          (?x)^(
+            docs/_static/.*|
+          )$
+
+  - hooks:
+      - entry: uv run mkdocs build
+        id: build-docs
+        name: build documentation
+        language: system
+        pass_filenames: false
+        require_serial: true
+    repo: local

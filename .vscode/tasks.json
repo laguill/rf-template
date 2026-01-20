@@ -1,0 +1,148 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+
+	"presentation": {
+		"echo": true,
+		"reveal": "always",
+		"focus": false,
+		"panel": "shared"
+	},
+
+	"tasks": [
+		// =========================
+		// QA
+		// =========================
+		{
+			"label": "qa: tests",
+			"type": "shell",
+			"command": "uv",
+			"args": ["run", "just", "test"],
+			"options": { "cwd": "${workspaceFolder}" },
+			"group": { "kind": "test", "isDefault": true },
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		},
+		{
+			"label": "qa: lint",
+			"type": "shell",
+			"command": "uv",
+			"args": ["run", "just", "lint"],
+			"options": { "cwd": "${workspaceFolder}" },
+			"group": "test",
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		},
+
+		// =========================
+		// Lifecycle – utilisateur
+		// =========================
+		{
+			"label": "lifecycle: fresh",
+			"type": "shell",
+			"command": "uv run just fresh",
+			"options": {
+				"cwd": "${workspaceFolder}",
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command"]
+				},
+				"env": {
+					"PATH": "${env:PATH};${env:LOCALAPPDATA}\\Programs\\nodejs"
+				}
+			},
+			"group": "build",
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		},
+		{
+			"label": "lifecycle: install (user)",
+			"type": "shell",
+			"command": "uv",
+			"args": ["run", "just", "install"],
+			"options": { "cwd": "${workspaceFolder}" },
+			"group": { "kind": "build", "isDefault": true },
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		},
+		{
+			"label": "lifecycle: update (user)",
+			"type": "shell",
+			"command": "uv",
+			"args": ["run", "just", "update"],
+			"options": { "cwd": "${workspaceFolder}" },
+			"group": "build",
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		},
+
+		// =========================
+		// Dev
+		// =========================
+		{
+			"label": "dev: install",
+			"type": "shell",
+			"command": "uv",
+			"args": ["run", "just", "install-dev"],
+			"options": { "cwd": "${workspaceFolder}" },
+			"group": "build",
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		},
+		{
+			"label": "dev: update",
+			"type": "shell",
+			"command": "uv",
+			"args": ["run", "just", "update-dev"],
+			"options": { "cwd": "${workspaceFolder}" },
+			"group": "build",
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		},
+
+				{
+			"label": "dev: start-chrome-debug",
+			"type": "shell",
+			"command": "uv",
+			"args": ["run", "just", "start-chrome-debug"],
+			"options": { "cwd": "${workspaceFolder}" },
+			"group": "build",
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		},
+
+		// =========================
+		// Playwright
+		// =========================
+		{
+			"label": "playwright: codegen",
+			"type": "shell",
+			"command": "uv",
+			"args": ["run", "just", "codegen", "${input:codegenUrl}"],
+			"options": { "cwd": "${workspaceFolder}" },
+			"group": "none",
+			"presentation": { "clear": true },
+			"problemMatcher": []
+		}
+	],
+
+	"inputs": [
+		{
+			"id": "codegenUrl",
+			"type": "pickString",
+			"description": "URL pour Playwright codegen",
+			"options": [
+				{
+					"label": "Site1",
+					"value": "https://site.com"
+				},
+				{
+					"label": "Site2",
+					"value": "https://site2"
+				}
+			],
+			"default": "https://site.com"
+		}
+	]
+}

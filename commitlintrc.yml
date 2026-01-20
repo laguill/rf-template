@@ -1,0 +1,25 @@
+---
+extends:
+  - "@commitlint/config-conventional"
+
+rules:
+  # Longueur maximale d'une ligne dans le corps du commit (hors header)
+  body-max-line-length:
+    - 2 # Niveau d'erreur (2 = bloquant)
+    - always # Toujours appliquer la règle
+    - 200 # Limite en caractères
+
+  # Liste des types autorisés pour le header du commit
+  type-enum:
+    - 2 # Niveau d'erreur (2 = bloquant)
+    - always # Toujours appliquer la règle
+    - - chore # Tâches diverses (maintenance, nettoyage, mise à jour de dépendances)
+      - ci # Changements liés à l'intégration continue (pipeline, scripts CI/CD)
+      - docs # Documentation uniquement (README, commentaires)
+      - feat # Nouvelle fonctionnalité (feature)
+      - fix # Correction de bug
+      - perf # Amélioration de performance
+      - refactor # Réécriture du code sans changement fonctionnel (refactoring)
+      - revert # Annulation d'un commit précédent
+      - style # Changements de style (formatage, indentation, pas de logique)
+      - test # Ajout ou modification de tests

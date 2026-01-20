@@ -1,0 +1,18 @@
+{
+	"recommendations": [
+		"ms-python.python",
+		"detachhead.basedpyright",
+		"charliermarsh.ruff",
+		"mhutchie.git-graph",
+		"tamasfe.even-better-toml",
+		"redhat.vscode-yaml",
+		"d-biehl.robotcode",
+		"nefrob.vscode-just-syntax",
+		"vivaxy.vscode-conventional-commits",
+		"yzhang.markdown-all-in-one",
+		"streetsidesoftware.code-spell-checker",
+		"joshbolduc.commitlint",
+		"streetsidesoftware.code-spell-checker-french",
+		"biomejs.biome"
+	]
+}

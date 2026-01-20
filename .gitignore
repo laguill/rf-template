@@ -1,0 +1,108 @@
+﻿# Reports and logs
+playwright-log.txt
+report.html
+log.html
+log
+output/
+*.old
+*.xml
+reports/
+testresults/
+pip-log.txt
+pip-delete-this-directory.txt
+coverage.xml
+
+# Environments
+*venv*/
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# dotenv environment variables file
+.env
+.env.test
+
+*.iml
+python
+__pycache__
+.bash_history
+.cache/
+.pytest_cache/
+.run
+browser
+.robocop_cache
+.ruff_cache
+
+
+# Local development
+.python-version
+.envrc
+.envrc.private
+.direnv/
+allure-report/
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# images
+*.png
+*.gif
+
+megalinter-reports/
+
+# Byte-compiled / optimized / DLL files
+__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+marimo/_static/
+marimo/_lsp/
+.mypy_cache/
+__marimo__
+
+# mkdocs
+site
+confluence-export/metadata.json
+confluence-export/Accueil/metadata.json
+confluence-export/Accueil/page.html
+confluence-export/Conventions/Conventional_commits/metadata.json
+confluence-export/Conventions/Conventional_commits/page.html
+confluence-export/Conventions/Robot_design_rules/metadata.json
+confluence-export/Conventions/Robot_design_rules/page.html
+confluence-export/Glossaire/metadata.json
+confluence-export/Glossaire/page.html
+confluence-export/Release_note/Changelog/metadata.json
+confluence-export/Release_note/Changelog/page.html
+confluence-export/Setup/Installation/metadata.json
+confluence-export/Setup/Installation/page.html
+confluence-export/Troubleshooting/FAQ/metadata.json
+confluence-export/Troubleshooting/FAQ/page.html
+confluence-export/Troubleshooting/Known_issues/metadata.json
+confluence-export/Troubleshooting/Known_issues/page.html

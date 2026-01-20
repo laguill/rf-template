@@ -1,0 +1,21 @@
+# See https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md for all rules.
+default: true
+# no-duplicate-heading - Multiple headings with the same content
+MD024: false
+# commands-show-output - Dollar signs used before commands without showing output
+MD014: false
+# no-inline-html
+MD033: false
+# no-emphasis-as-heading
+MD036: false
+# no-space-in-code - Spaces inside code span elements
+MD038: false
+# first-line-heading/first-line-h1
+MD041: false
+# no-alt-text
+MD045: false
+# link-fragments
+MD051: false
+line-length:
+  line_length: 120
+  code_blocks: false

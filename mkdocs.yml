@@ -1,0 +1,183 @@
+# Project information
+site_description: rf-template
+site_name: rf-template
+site_url: https://github.com/laguill/rf-template
+docs_dir: docs
+edit_uri: edit/main/docs/
+use_directory_urls: false
+
+exclude_docs: |
+  _partials/
+  generated/_resolve_suite.md
+  apps/README.md
+
+# Repository
+repo_name: rf-template
+repo_url: https://github.com/laguill/rf-template
+
+# Copyright
+copyright: |
+  &copy; 2026- <a href="https://exemple.com" target="_blank" rel="noopener">Exemple</a>
+watch:
+  - docs/
+  - tests/
+
+# Configuration
+theme:
+  favicon: _static/favicon-32x32.png
+  features:
+    - announce.dismiss # dismissible announcements
+    # - content.action.edit
+    - content.code.annotate
+    - content.code.copy # add copy button to code blocks
+    - content.tabs.link
+    - header.autohide # auto-hide header on scroll
+    # - navigation.collapse
+    - navigation.indexes # section index pages
+    - navigation.instant # faster page loads
+    - navigation.instant.progress
+    - navigation.path # show navigation breadcrumb path
+    - navigation.sections
+    - navigation.tabs # show navigation as tabs
+    - navigation.tabs.sticky # keep navigation tabs visible when scrolling
+    - navigation.top # back to top button
+    - navigation.tracking # updates URL as you scroll
+    - navigation.footer # links to previous/next page, helpful for small screens
+    - search.highlight # highlight search results
+    - search.share # shareable search links
+    - search.suggest # search suggestions
+    - toc.follow # auto-scroll TOC
+    - toc.integrate
+  language: fr
+  font:
+    code: Fira Mono
+    text: PT Sans
+  logo: _static/logo.png
+  name: material
+  palette:
+    # Palette toggle for system preference and use brightness-auto icon
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: teal
+      accent: white
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: teal
+      accent: teal
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+# Customization
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/laguill/rf-template
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/
+extra_css:
+  - stylesheets/extra.css
+
+# Plugins
+plugins:
+  - search
+  - autorefs
+  - social:
+      cards_layout_options:
+        background_color: "#00c0b5"
+        font_family: Roboto
+  - tags
+  - ezglossary:
+      use_default: true
+      ignore_case: true
+      tooltip: full
+      inline_refs: list
+      markdown_links: true
+  - redirects:
+      redirect_maps: {}
+  - macros:
+      module_name: main
+  # - mkdocs-to-confluence:
+  #     auth_type: bearer
+  #     page_label: auto-generated-docs
+  #     cleanup_orphaned_pages: false # Set to true to auto-delete orphaned pages
+  #     debug: true
+  #     verbose: false
+  #     debug_diff: false
+  #     strip_h1: true
+
+
+# Vérification que les images existent
+hooks:
+  - docs/hooks.py
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - sane_lists # lists separated by paragraphs
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - markdown.extensions.abbr
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.emoji: null
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - class: mermaid
+          name: mermaid
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.blocks.tab:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Accueil: index.md
+  - Setup:
+      - Installation: setup/installation.md
+  - Conventions:
+      - Conventional commits: conventions/conventional_commits.md
+      - Robot design rules: conventions/robot_design_rules.md
+      - Worktree Usage: conventions/worktree_usage.md
+      - Pre-commit hooks: conventions/pre_commit_hooks.md
+      - Undo pushed commit: conventions/undo_pushed_commit.md
+  - Troubleshooting:
+      - Known issues: troubleshooting/KNOWN_ISSUES.md
+      - FAQ: troubleshooting/FAQ.md
+  - Release note:
+      - Changelog: releasenotes/changelog.md
+
+  - Glossaire: glossaire.md
