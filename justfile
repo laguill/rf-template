@@ -107,7 +107,17 @@ fresh: set-up clean install
 [group("dev")]
 install-dev:
     @just banner "Installation des dependances DEV"
-    uv sync --group dev
+    uv sync --all-groups -U
+    @just banner "Clean node"
+    uv run rfbrowser clean-node
+    @just banner "Mise a jour de chromium"
+    uv run rfbrowser install chromium
+    @just banner "Mise a jour de firefox"
+    uv run rfbrowser install firefox
+    @just banner "Mise a jour de npm"
+
+    @just banner "Mise a jour de allure"
+    npm update -g allure-commandline
 
     @just banner "Installation des hooks de pre-commit"
     uv run prek install
