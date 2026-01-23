@@ -1,13 +1,13 @@
 *** Settings ***
-Library    Browser    auto_closing_level=KEEP
+Library             Browser    auto_closing_level=KEEP
 
-Suite Setup    Open site
-Suite Teardown    No Operation
+Suite Setup         Open Site
+Suite Teardown      No Operation
 
 *** Variables ***
-${BROWSER} =    chromium
-${HEADLESS} =    False
-${URL} =    https://exemple.com
+${BROWSER} =        chromium
+${HEADLESS} =       False
+${URL} =            https://exemple.com
 
 *** Test Cases ***
 Connexion Au Compte
@@ -20,7 +20,7 @@ Connect To Existing Browser
     New Context
     New Page    https://example.com
 
-Open site
+Open Site
     [Documentation]
     ...    1. Open Chrome en mode headless
     ...    2. Open new tab/window.

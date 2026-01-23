@@ -189,9 +189,16 @@ codegen url:
 # Commande pour ouvrir la documentation en local
 [group("documentation")]
 doc-serve:
+	uv sync --extra docs
     -uv run mkdocs serve
 
 # Commande pour construire la documentation
 [group("documentation")]
 doc-build:
+	uv sync --extra docs
     -uv run mkdocs build
+
+# Déployer sur GitHub Pages
+docs-deploy:
+	uv sync --extra docs
+    uv run mkdocs gh-deploy --force
