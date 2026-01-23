@@ -1,5 +1,5 @@
 ﻿# Reports and logs
-playwright-log.txt
+playwright-log*.txt
 report.html
 log.html
 log
@@ -21,6 +21,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+node_modules/*
+uv.lock
+package.json
+package-lock.json
 
 # dotenv environment variables file
 .env
@@ -51,6 +55,7 @@ allure-report/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/keybindings.json
 *.code-workspace
 
 ### VisualStudioCode Patch ###
@@ -58,7 +63,6 @@ allure-report/
 .history
 
 # images
-*.png
 *.gif
 
 megalinter-reports/
@@ -106,3 +110,4 @@ confluence-export/Troubleshooting/FAQ/metadata.json
 confluence-export/Troubleshooting/FAQ/page.html
 confluence-export/Troubleshooting/Known_issues/metadata.json
 confluence-export/Troubleshooting/Known_issues/page.html
+results/playwright-log*txt

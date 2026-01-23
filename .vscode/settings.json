@@ -40,7 +40,7 @@
 	"git.rebaseWhenSync": true,
 	"git.suggestSmartCommit": false,
 	"git.supportCancellation": true,
-	"git.useEditorAsCommitInput": false,
+	"git.useEditorAsCommitInput": true,
 	"git.pullBeforeCheckout": true,
 	"git.blame.editorDecoration.enabled": true,
 	"git.blame.statusBarItem.enabled": true,
@@ -65,7 +65,7 @@
 	},
 	"explorer.compactFolders": false,
 	"python.terminal.activateEnvInCurrentTerminal": true,
-	"editor.acceptSuggestionOnCommitCharacter": false,
+	"editor.acceptSuggestionOnCommitCharacter": true,
 	"pylint.ignorePatterns": [
 		"**/pyright-internal/src/tests/samples/*",
 		"**/pyright-internal/typeshed-fallback/*",
@@ -111,5 +111,16 @@
 	"editor.unicodeHighlight.ambiguousCharacters": false,
 	"robotcode.analysis.diagnosticMode": "workspace",
 	"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python",
-  	"python.terminal.activateEnvironment": true
+	"python.terminal.activateEnvironment": true,
+	"vscode-just.justPath": "uv run just",
+	"robotcode.robot.pythonPath": [
+		"${workspaceFolder}/.venv/Scripts/python.exe"
+	],
+	"conventionalCommits.emojiFormat": "emoji",
+	"conventionalCommits.lineBreak": "\\n",
+	"conventionalCommits.showEditor": true,
+	"git.diagnosticsCommitHook.enabled": true,
+	"git.postCommitCommand": "sync",
+	"vscode-just.runInTerminal": true,
+	"vscode-just.useSingleTerminal": true
 }

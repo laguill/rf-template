@@ -11,6 +11,9 @@ Bienvenue dans l’équipe Test ! Voici quelques lignes directrices pour vous ai
 
 ## Development local
 
+> [tip]
+> Pour une meilleure organisation, nous recommandons d'utiliser les **worktrees Git** plutôt que les branches traditionnelles. Consultez notre guide : [Utilisation des Worktrees](../conventions/worktree_usage.md)
+
 Les libraries python sont définies dans [pyproject.toml].
 
 Pour initialiser l'environnement de dev. Placez vous dans le dossier avec un shell powershell.
@@ -27,6 +30,11 @@ Executer la commande suivante
 ```pwsh
 uv just run test
 ```
+
+### Commit des fichiers depuis VSCode
+
+Cliquer sur le bouton, puis suivre les instructions à l'écran.
+![Commit depuis Vscode](docs/_static/vscode_commit.png)
 
 ### Ressources utiles
 

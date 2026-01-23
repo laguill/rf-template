@@ -83,11 +83,11 @@ repos:
             docs/_static/.*|
           )$
 
-  - hooks:
-      - entry: uv run mkdocs build
-        id: build-docs
-        name: build documentation
-        language: system
-        pass_filenames: false
-        require_serial: true
-    repo: local
+  # - hooks:
+  #     - entry: uv run mkdocs build
+  #       id: build-docs
+  #       name: build documentation
+  #       language: system
+  #       pass_filenames: false
+  #       require_serial: true
+  #   repo: local

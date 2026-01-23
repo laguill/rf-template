@@ -1,59 +1,75 @@
 # {{ suite.name }}
 
-## Suite Documentation
-{% if not suite.is_folder %}
-{% for doc_line in (suite.doc or ["No documentation available for this suite"]) %}
-{{ doc_line }}
-{% endfor %}
+{% if suite.is_folder %}
+
+!!! tip ""
+    **{{ suite.total_tests }} Test Cases in all Sub-Suites**
+
+**Available Sub-Suites:**
+```
+{{ suite.sub_suites | map(attribute='name') | join('\n') }}
+```
+
 {% else %}
-Suite is a directory - no documentation available
-{% endif %}
+
+!!! tip ""
+    **{{ suite.num_tests }} Test Cases in Current Suite**
+
+!!! info "Suite Documentation"
+    {% for doc_line in (suite.doc or ["No documentation available for this suite"]) %}
+    {{ doc_line }}
+    {% endfor %}
 
 {% if suite.user_keywords %}
-## Suite User Keywords
-\```robotframework
+**Available Suite User Keyword:**
+```robotframework
 *** Keywords ***
 {{ suite.user_keywords | join('\n') }}
-\```
+```
 {% endif %}
 
-## Test Cases
-
-Count of Tests: {{ suite.total_tests }}
+## Test Case Overview
 
 {% if suite.tests | length > 0 %}
-\```robotframework
+**All Test Cases in Suite:**
+```robotframework
+*** Settings ***
+Name    {{ suite.name }}
+
 *** Test Cases ***
 {{ suite.tests | map(attribute='name') | join('\n') }}
-\```
-{% endif %}
+```
 
 
+## Test Case Details
 
-{% if suite.tests | length > 0 %}
 {% for test in (suite.tests or []) %}
-## {{ test.name }}
 
-### Documentation
+---
 
-{% for doc_line in (test.doc or ["No documentation available for this test case"]) %}
-{{ doc_line }}
-{% endfor %}
+### {{ test.name }}
 
-{% if test.tags | length > 0 %}
-### Tags
-{{ (test.tags or []) | join(', ') }}
-{% endif %}
+!!! abstract "**Documentation:**"
+    {% for doc_line in (test.doc or ["No documentation available for this test case"]) %}
+    {{ doc_line }}
+    {% endfor %}
 
+!!! tip "Tags"
+    {% if test.tags and ((test.tags | default([])) | length > 0) %}
+    {{ (test.tags or []) | join(', ') }}
+    {% endif %}
 
-### Test Case Body
 {% if test.keywords %}
-\```robotframework
+**Test Case Body:**
+```robotframework
 *** Test Cases ***
 {{ test.name }}
     {{ test.keywords | join('\n    ') }}
-\```
+```
 {% endif %}
 
 {% endfor %}
+
+{% endif %}
+
 {% endif %}

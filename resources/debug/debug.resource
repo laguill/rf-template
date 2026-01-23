@@ -1,7 +1,6 @@
 *** Settings ***
-Documentation       Suite de tests de développement et debug
-...                 Ces tests utilisent Chrome Debug (CDP) pour itération rapide
-...                 Ne pas utiliser en CI/Production
+Documentation
+...                 Test case use Chrome Debug (CDP)
 
 Library             Browser    auto_closing_level=KEEP
 

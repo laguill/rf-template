@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = "==3.14.*"
 dependencies = [
     "allure-robotframework>=2.15.0",
-    "mkdocs-material[imaging]>=9.7.1",
     "robotframework>=7.3.2",
     "robotframework-browser[bb]>=19.12.0",
     "robotframework-dashboard>=1.2.1",
@@ -35,7 +34,6 @@ dev = [
     "mkdocs-macros-plugin>=1.5.0",
     "mkdocs-redirects>=1.2.2",
     "mkdocs-to-confluence",
-    "robotframework-testdoc",
     "python-dotenv>=1.2.1",
     "cairosvg>=2.8.2",
     "pillow>=11.3.0",
@@ -43,6 +41,7 @@ dev = [
     "pymdown-extensions>=10.20",
     "mkdocs-ezglossary-plugin>=2.1.0",
     "marimo>=0.18.4",
+    "robotframework-testdoc>=0.3.1",
 ]
 
 [project.urls]
@@ -112,8 +111,6 @@ reportUnusedImport = false
 
 [tool.uv.sources]
 mkdocs-to-confluence = { git = "https://github.com/laguill/mkdocs-to-confluence.git", branch = "my-dev/all-features" }
-robotframework-testdoc = { git = "https://github.com/MarvKler/robotframework-testdoc.git", branch = "feat/plugin-integration" }
-
 
 [tool.ruff.lint]
 preview = true

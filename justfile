@@ -62,7 +62,7 @@ install:
     uv run rfbrowser install firefox
 
 
-# Mise a jour des library
+# Mise à jour des library
 [group("lifecycle")]
 update:
     @just banner "Mis a jour de uv ..."

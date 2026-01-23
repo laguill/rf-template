@@ -4,6 +4,8 @@
 #     "msgspec",
 # ]
 #
+# [tool.uv]
+# exclude-newer = "2025-06-27T12:38:25.742953-04:00"
 # ///
 """Generate release notes from commits on main branch."""
 

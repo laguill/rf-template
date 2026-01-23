@@ -38,7 +38,7 @@ Installez VS Code pour éditer les fichiers :
 winget install -e --id Microsoft.VisualStudioCode
 ```
 
-## 🛠 Installation de l’environnement de développement
+## Executer les tests (pour les devs voir plus bas)
 
 ### 1. Cloner le dépôt
 
@@ -54,7 +54,7 @@ git clone https://github.com/laguill/rf-template.git
 cd rf-template
 ```
 
-### 2. Pour exécuter les tests uniquement (sans coder)
+### 2. Pour exécuter les tests uniquement
 
 1. Ouvrez un terminal **(PowerShell ou CMD)** dans le dossier du projet.
 2. Installez les dépendances minimales :
@@ -74,88 +74,63 @@ cd rf-template
    _Tous les tests Robot Framework seront exécutés._
    _Le résumé des résultats s'affiche dans le navigateur._
 
-4. Mettre à Jour le Projet
+!!! tip "Mettre à Jour le Projet"
 
-   Pour actualiser les dépendances :
+      Pour actualiser les dépendances :
 
-   ```powershell
-   uv run just update
-   ```
+      ```powershell
+      uv run just update
+      ```
 
-## ✨ Développement
+## ✨ INstaller les dépendances pour le Développement
 
 ### 1. Cloner le dépôt
 
 **Important** : Clonez le dépôt dans le dossier `~/source/repos/` pour une organisation cohérente :
 
-Si vous êtes automaticien et que vous avez suivis les instructions précédentes vous pouvez tout supprimer.
+Si vous êtes automaticien et que vous avez suivis les instructions précédentes vous pouvez tout supprimer 😉.
 
 ```powershell
 # Créez le dossier parent si nécessaire
-mkdir -p ~/source/repos/rf-template
+mkdir -p ~/source/repos/TestsAutos
+cd ~/source/repos/TestsAutos
 
-# Clonez le dépôt
+# Cloner en mode bare dans .git (recommandé pour les worktrees)
 cd ~/source/repos/rf-template
 git clone --bare https://github.com/laguill/rf-template.git .git
+
+# Configurer le fetch pour récupérer toutes les branches
+git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+
+# Récupérer toutes les branches distantes
+git fetch
+
+# Configurer le tracking des branches locales
+git for-each-ref --format='%(refname:short)' refs/heads | ForEach-Object { git branch --set-upstream-to=origin/$_ $_ }
+```
+Lister les branches distantes
+```powershell
+git branch -vv
 ```
 
-1. Installez toutes les dépendances (incluant les outils de développement) :
+### 2. Pour le développement de nouveaux tests
 
-   ```powershell
-      uv run just set-up install-dev
-   ```
-
-   _Cette commande installe les dépendances python et des outils comme robocop pour vérifier la qualité du code._
 
 > [tip]
-> Pour une meilleure organisation, nous recommandons d'utiliser les **worktrees Git** plutôt que les branches traditionnelles. Consultez notre guide : [Utilisation des Worktrees](docs/conventions/worktree_usage.md)
+> Pour une meilleure organisation, nous recommandons d'utiliser les **worktrees Git** plutôt que les branches traditionnelles. Consultez notre guide : [Utilisation des Worktrees](../conventions/worktree_usage.md)
 
-2. Utiliser les tasks dans vscode
+### 3. Utiliser les tasks dans vscode
 
 > [tip]
 > Des actions sont configurées dans vscode pour faciliter l'usage des commandes powershell. Pour les utiliser, ouvrez la palette de commandes (Ctrl+Shift+P), tapez "Run Task" et sélectionnez une des tâches disponibles comme "test", "install-dev" ou "update-dev".
 
-3. Mettre à Jour le Projet
+!!! tip "Mettre à Jour le Projet"
 
-   Pour actualiser les dépendances :
+      Pour actualiser les dépendances :
 
-   ```powershell
-   uv run just update-dev
-   ```
-
-## 📝 Développer de Nouveaux Tests
-
-1. Ouvrez le projet dans VS Code :
-
-   - Lancez VS Code > Fichier > Ouvrir un dossier > Sélectionnez le dossier du projet.
-
-2. Créez/modifiez des tests :
-   - Ajoutez vos fichiers de test dans le dossier /tests (format .robot).
-3. Vérifiez vos changements :
-
-   ```powershell
-   uv run just test
-   ```
-
-4. Exemple : Un fichier mon\*test.robot pourrait ressembler à :
-
-   ```RobotFramework
-   *** Settings ***
-   Library   Browser
-
-   *** Test Cases ***
-   Example Test
-      New Page    https://playwright.dev
-      Get Text    h1    contains    Playwright
-   ```
-
-## 🤝 Contribuer
-
-Pour contribuer, voir le guide complet : [CONTRIBUTING.md](CONTRIBUTING.md)
-
-- PR fusionnées après validation par un mainteneur et passage de tous les tests.
-
-- Respectez les conventions de commit et la structure des tests.
+      ```powershell
+      uv run just update-dev
+      ```
 
 ## 📚 Ressources utiles
 

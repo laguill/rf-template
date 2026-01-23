@@ -97,7 +97,7 @@ Voici la liste des hooks configurés dans ce projet :
 
 ### 13. Conventional Commits
 - **Description** : Vérification des messages de commit
-- **Fonctionnalité** : Assure que les messages de commit suivent la convention [Conventional Commits](conventional_commits.md)
+- **Fonctionnalité** : Assure que les messages de commit suivent la convention **Conventional Commits**
 
 ### 14. Commitizen
 - **Description** : Assistant pour les messages de commit
@@ -145,7 +145,7 @@ git commit --no-verify -m "Votre message de commit"
 
 3. **Utilisez les outils de formatage** : Les hooks comme `robocop-format` et `ruff-format` peuvent corriger automatiquement certains problèmes. Utilisez-les régulièrement.
 
-4. **Respectez les conventions** : Suivez les conventions de nommage et de style définies dans les autres documents de la section [Conventions](conventional_commits.md).
+4. **Respectez les conventions** : Suivez les conventions de nommage et de style définies dans les autres documents de la section **Conventions**.
 
 5. **Documentation** : Si vous modifiez la documentation, assurez-vous qu'elle peut être construite sans erreurs avant de commiter.
 

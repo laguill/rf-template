@@ -94,7 +94,7 @@ git worktree remove ../rf-template-cleanup
 1. **Créer un worktree dédié** :
    ```powershell
    cd ~/source/repos/rf-template
-git worktree add ../rf-template-undo-commit
+   git worktree add ../rf-template-undo-commit
    ```
 
 2. **Aller dans le worktree** :
